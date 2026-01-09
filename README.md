@@ -68,6 +68,6 @@ npm run dev
 👨‍💻 **Felipe Miranda**  
 Desenvolvedor Full Stack
 
-- 💼 LinkedIn: https://www.linkedin.com/in/felipemiranda
-- 💻 GitHub: https://github.com/felipemiranda
+- 💼 LinkedIn: https://www.linkedin.com/in/felipe-m-945a6a116/
+- 💻 GitHub: https://github.com/felipef210
 - ✉️ E-mail: rfelipe321@live.com
