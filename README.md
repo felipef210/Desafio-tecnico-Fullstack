@@ -16,18 +16,6 @@ Aplicação de lista de tarefas desenvolvida em **React** e **Node**, com filtro
 - 🔔 Feedback visual com Snackbar
 
 ## 🛠️ Tecnologias utilizadas
-
-### Tela inicial
-<img width="1117" height="560" alt="tela inicial" src="https://github.com/user-attachments/assets/40bcced6-77aa-4c32-b5e5-76f3ff6ca118" />
-
-### Formulário
-<img width="1061" height="588" alt="formulario" src="https://github.com/user-attachments/assets/9e4bd601-adea-4e33-9f1a-231acfd1163c" />
-
-### Feedbacks
-<img width="1878" height="932" alt="sucesso" src="https://github.com/user-attachments/assets/2cb33b03-4b4b-4100-98ae-6af30405921f" />
-<img width="1876" height="932" alt="not found" src="https://github.com/user-attachments/assets/a4a24255-168f-4599-84b6-9469446b9066" />
-<img width="1876" height="930" alt="erro generico" src="https://github.com/user-attachments/assets/0394c50d-42aa-4337-90ca-353fbf358b6d" />
-
 - React
 - JavaScript (ES6+)
 - CSS
@@ -37,7 +25,18 @@ Aplicação de lista de tarefas desenvolvida em **React** e **Node**, com filtro
 - Typescript
 
 ## 📸 Screenshots
+### Tela inicial
+<img width="1117" height="560" alt="tela inicial" src="https://github.com/user-attachments/assets/40bcced6-77aa-4c32-b5e5-76f3ff6ca118" />
 
+### Formulário
+<img width="1061" height="588" alt="formulario" src="https://github.com/user-attachments/assets/9e4bd601-adea-4e33-9f1a-231acfd1163c" />
+
+### Feedbacks
+<img width="1878" height="932" alt="sucesso" src="https://github.com/user-attachments/assets/2cb33b03-4b4b-4100-98ae-6af30405921f" />
+
+<img width="1876" height="932" alt="not found" src="https://github.com/user-attachments/assets/a4a24255-168f-4599-84b6-9469446b9066" />
+
+<img width="1876" height="930" alt="erro generico" src="https://github.com/user-attachments/assets/0394c50d-42aa-4337-90ca-353fbf358b6d" />
 
 ## ▶️ Como executar o projeto
 
