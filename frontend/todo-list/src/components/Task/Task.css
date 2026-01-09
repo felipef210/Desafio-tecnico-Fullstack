@@ -1,0 +1,127 @@
+.task {
+    background-color: var(--cor-secundaria);
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    transition: .5s;
+    box-sizing: border-box;
+}
+
+.task:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 0px 0px 10px black;
+}
+
+.task.completed:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+.task__content p {
+    font-size: 1.1rem;
+}
+
+.content__title {
+    font-weight: 700;
+    margin-bottom: -.5rem;
+}
+
+.completed {
+    text-decoration: line-through 2px;
+}
+
+.task__actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.actions__edit, .actions__delete, .actions__complete {
+    cursor: pointer;
+}
+
+.actions__edit, .actions__delete {
+    width: 40px;
+    height: 40px;
+    border-radius: .3rem;
+    border: none;
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: .3s;
+}
+
+.actions__edit {
+    background-color: blue;
+    background-image: url('/edit-icon.png');
+}
+
+.actions__edit:hover {
+    background-color: rgb(0, 0, 170);
+}
+
+.actions__delete {
+    background-color: red;
+    background-image: url('/delete-icon.png');
+}
+
+.actions__delete:hover {
+    background-color: rgb(170, 0, 0);
+}
+
+.actions__complete {
+    background-color: white;
+    border: 1px solid black;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.actions__complete.completed {
+    background-color: green;
+    border-color: green;
+}
+
+.actions__complete.completed::after {
+    content: '✓';
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -55%);
+}
+
+@media screen and (max-width: 900px) {
+  .task {
+    width: 600px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .task {
+    width: 500px !important;
+    
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .task {
+    width: 400px !important;
+    
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .task {
+    width: 300px !important;
+    
+  }
+}

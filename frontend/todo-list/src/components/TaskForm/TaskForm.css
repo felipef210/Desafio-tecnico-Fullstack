@@ -1,0 +1,141 @@
+.form {
+    background-color: var(--cor-secundaria);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: black;
+    padding: 2rem;
+    border-radius: .5rem;
+    margin: 1rem 0;
+}
+
+.form__h2 {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+.form__error {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.form .field {
+    display: flex;
+    justify-content: space-between;
+    width: 30rem;
+}
+
+.form__field {
+    display: flex;
+    flex-direction: column;
+    width: 23rem;
+}
+
+.form label {
+    font-size: 1.1rem;
+}
+
+.form div input, .form div textarea {
+    width: 23rem;
+    border: 1.5px solid var(--cor-primaria);
+    border-radius: .4rem;
+    padding: .5rem;
+    outline: none;
+    font-size: 1.1rem;
+}
+
+.form div textarea {
+    resize: none;
+    height: 5rem;
+}
+
+.form div label {
+    font-weight: 500;
+}
+
+.form__actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.actions__primary-btn, .actions__cancel-btn {
+    color: var(--cor-secundaria);
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    font-size: .96rem;
+    border-radius: .3rem;
+    width: 15rem;
+    opacity: 0.70;
+    transition: .3s;
+    margin-top: 1rem;
+}
+
+.actions__primary-btn:hover, .actions__cancel-btn:hover {
+    opacity: 1;
+}
+
+.actions__primary-btn {
+    background-color: var(--cor-primaria);
+}
+
+.actions__cancel-btn {
+    background-color: red;
+}
+
+@media screen and (max-width: 700px) {
+    .actions__primary-btn, .actions__cancel-btn {
+        width: 10rem !important;
+    }
+
+    .form div input, .form div textarea {
+        width: 14rem;
+    }
+
+    .form__field {
+        display: flex;
+        flex-direction: column;
+        width: 12rem;
+    }
+
+    .form .field {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .actions__primary-btn, .actions__cancel-btn {
+        width: 10rem !important;
+    }
+
+    .form div input, .form div textarea {
+        width: 14rem;
+    }
+
+    .form__field {
+        display: flex;
+        flex-direction: column;
+        width: 12rem;
+    }
+
+    .form .field {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .field {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .actions__primary-btn, .actions__cancel-btn {
+        width: 8rem !important;
+    }
+}

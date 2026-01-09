@@ -1,0 +1,137 @@
+:root {
+    --cor-primaria: #985AF2;
+    --cor-secundaria: #FFF;
+}
+
+body {
+  font-family: Arial;
+  background-color: var(--cor-primaria);
+  padding: 30px;
+  color: var(--cor-secundaria);
+  margin: 0;
+}
+
+h1 {
+  color: var(--cor-secundaria);
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  margin-top: -1rem;
+  font-weight: 400;
+  color: rgb(204, 204, 204);
+  font-size: 1.1em;
+}
+
+input, textarea {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.btnAdicionarTarefa {
+  display: block;
+  margin: 0 auto;
+  padding: 1rem;
+  width: 20rem;
+  font-size: 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  border: 1px solid black;
+  background-color: white;
+  color: var(--cor-primaria);
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btnAdicionarTarefa:hover {
+  background-color: rgb(240, 240, 240);
+  transform: translateY(-3px);
+}
+
+.form-wrapper {
+  overflow: hidden;
+  transition: all 1s ease;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.form-wrapper.show {
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-wrapper.hide {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 2rem;
+}
+
+.filter__search {
+  width: 50%;
+  padding: .5rem;
+  border-radius: .5rem;
+  border: none;
+}
+
+.filter__order {
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+.todo-list {
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 900px) {
+  .app {
+    width: 600px !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .app {
+    width: 500px !important;
+  }
+
+  .filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter__search {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .app {
+    width: 400px !important;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .app {
+    width: 300px !important;
+  }
+
+  .btnAdicionarTarefa {
+    width: 15rem;
+  }
+}
