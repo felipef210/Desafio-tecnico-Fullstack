@@ -6,9 +6,8 @@ export function createTask(req: Request, res: Response) {
   const { title } = req.body;
   const { description } = req.body;
 
-  if (!title || title.trim() === '') {
+  if (!title || title.trim() === '')
     return res.status(400).json({ message: 'O título é obrigatório' });
-  }
 
   if (!description || description.trim() === '')
     return res.status(400).json({ message: 'A descrição é obrigatória' });
@@ -25,9 +24,8 @@ export function getTaskById(req: Request, res: Response) {
   const id: number = Number(req.params.id);
   const task: Task | undefined = taskService.findTaskById(id);
 
-  if (!task) {
+  if (!task)
     return res.status(404).json({ message: 'Tarefa não encontrada' });
-  }
 
   res.json(task);
 }
@@ -38,16 +36,14 @@ export function updateTask(req: Request, res: Response) {
   const { description } = req.body;
   const task: Task | null = taskService.updateTask(id, req.body);
 
-  if (!title || title.trim() === '') {
+  if (!title || title.trim() === '')
     return res.status(400).json({ message: 'O título é obrigatório' });
-  }
 
   if (!description || description.trim() === '')
     return res.status(400).json({ message: 'A descrição é obrigatória' });
 
-  if (!task) {
+  if (!task)
     return res.status(404).json({ message: 'Tarefa não encontrada' });
-  }
 
   res.status(200).json(task);
 }
@@ -66,9 +62,8 @@ export function deleteTask(req: Request, res: Response) {
   const id: number = Number(req.params.id);
   const deleted: boolean = taskService.deleteTask(id);
 
-  if (!deleted) {
+  if (!deleted)
     return res.status(404).json({ message: 'Tarefa não encontrada' });
-  }
 
   res.status(204).send();
 }

@@ -26,13 +26,11 @@ const TaskForm = ({ addTask, editingTask, cancelEdit, updateTask }) => {
       description: ''
     };
 
-    if (!title.trim()) {
+    if (!title.trim())
       newErrors.title = 'O título da tarefa é obrigatório';
-    }
 
-    if (!description.trim()) {
+    if (!description.trim())
       newErrors.description = 'A descrição da tarefa é obrigatória';
-    }
 
     setErrorMessage(newErrors);
 
@@ -40,7 +38,7 @@ const TaskForm = ({ addTask, editingTask, cancelEdit, updateTask }) => {
       return;
 
     if (editingTask)
-      updateTask({id: editingTask.id, title, description});
+      updateTask({ id: editingTask.id, title, description });
 
     else
       addTask(title, description);
@@ -67,7 +65,7 @@ const TaskForm = ({ addTask, editingTask, cancelEdit, updateTask }) => {
               />
               {
                 errorMessage.title && (
-                  <p className="form__error">{errorMessage.title}</p>
+                  <p className="form__error">{ errorMessage.title }</p>
                 )
               }
             </div>
@@ -84,7 +82,7 @@ const TaskForm = ({ addTask, editingTask, cancelEdit, updateTask }) => {
                 />
               {
                 errorMessage.description && (
-                  <p className="form__error">{errorMessage.description}</p>
+                  <p className="form__error">{ errorMessage.description }</p>
                 )
               }
             </div>
@@ -92,7 +90,7 @@ const TaskForm = ({ addTask, editingTask, cancelEdit, updateTask }) => {
           
           <div className="form__actions">
             <button type="submit" className="actions__primary-btn">{ editingTask ? 'Salvar alterações' : 'Criar tarefa' }</button>
-            <button type="button" className="actions__cancel-btn" onClick={cancelEdit}>Cancelar</button>
+            <button type="button" className="actions__cancel-btn" onClick={ cancelEdit }>Cancelar</button>
           </div>
         </form>
     </div>

@@ -35,9 +35,10 @@ export function updateTask(id: number, taskBody: Task): Task | null {
       task.title = taskBody.title;
   }
 
-  if (taskBody.description !== undefined)
+  if (taskBody.description !== undefined) {
     if (task.description.trim() !== '')
       task.description = taskBody.description;
+  }
 
   return task;
 }
@@ -55,6 +56,7 @@ export function updateTaskStatus(id: number): Task | null {
 
 export function deleteTask(id: number): boolean {
   const index = tasks.findIndex(t => t.id === id);
+  
   if (index === -1) 
     return false;
 

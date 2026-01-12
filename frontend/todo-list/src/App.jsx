@@ -28,22 +28,19 @@ function App() {
     let result = [...tasks];
 
     if (titleSearch) {
-      result = result.filter(task =>
+      result = result.filter((task) =>
         task.title.toLowerCase().includes(titleSearch.toLowerCase())
       );
     }
 
-    if (order === 'alfabetica') {
+    if (order === 'alfabetica')
       result.sort((a, b) => a.title.localeCompare(b.title));
-    }
 
-    if (order === 'antigo') {
+    if (order === 'antigo')
       result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-    }
 
-    if (order === 'recente') {
+    if (order === 'recente')
       result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-    }
 
     setFilteredTasks(result);
   }, [tasks, titleSearch, order]);
@@ -122,31 +119,28 @@ function App() {
       <div className="app">
         <h1>Lista de tarefas</h1>
         <h3>
-          {tasks.filter(t => t.completed).length} de {tasks.length} {tasks.length === 1 ? 'tarefa' : 'tarefas'} 
-          {tasks.filter(t => t.completed).length === 1 || tasks.length === 1 ? ' concluída' : ' concluídas'}
+          { tasks.filter((t) => t.completed).length} de {tasks.length } { tasks.length === 1 ? 'tarefa' : 'tarefas' } 
+          { tasks.filter((t) => t.completed).length === 1 || tasks.length === 1 ? ' concluída' : ' concluídas' }
         </h3>
 
-        <div className={`form-wrapper ${showForm ? 'show' : 'hide'}`}>
+        <div className={ `form-wrapper ${showForm ? 'show' : 'hide'}` }>
           <TaskForm
-            addTask={addTask}
-            updateTask={callUpdateTask}
-            editingTask={selectedEditingTask}
-            cancelEdit={() => {
-              setSelectedEditingTask(null);
-              setShowForm(false);
-            }}
+            addTask={ addTask }
+            updateTask={ callUpdateTask }
+            editingTask={ selectedEditingTask }
+            cancelEdit={ () => { setSelectedEditingTask(null); setShowForm(false); }}
           />
         </div>
 
         {
-          !showForm && <button className="btnAdicionarTarefa" onClick={() => setShowForm(true)}>+ Adicionar tarefa</button>
+          !showForm && <button className="btnAdicionarTarefa" onClick={ () => setShowForm(true) }>+ Adicionar tarefa</button>
         }
 
         <div className="filter">
-          <input onChange={(e) => setTitleSearch(e.target.value)} type="search" className="filter__search" placeholder="Pesquise pelo título da tarefa..."/>
+          <input onChange={ (e) => setTitleSearch(e.target.value) } type="search" className="filter__search" placeholder="Pesquise pelo título da tarefa..."/>
           <label>Ordenar por:</label>
 
-          <select className="filter__order" onChange={(e) => setOrder(e.target.value)}>
+          <select className="filter__order" onChange={ (e) => setOrder(e.target.value) }>
             <option value="">Selecione uma opção...</option>
             <option value="alfabetica">Ordem alfabética</option>
             <option value="antigo">Mais antigo</option>
@@ -156,9 +150,9 @@ function App() {
 
         <div className="todo-list">
           <AnimatePresence>
-            {filteredTasks.map(task => (
+            {filteredTasks.map((task) => (
               <motion.div
-                key={task.id}
+                key={ task.id }
                 layout
                 initial={{ opacity: 0, x: -100 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -166,10 +160,10 @@ function App() {
                 transition={{ duration: 0.5 }}
               >
                 <Task
-                  task={task}
-                  updateTaskStatus={updateTaskStatus}
-                  onEdit={() => {setSelectedEditingTask(task); setShowForm(true);}}
-                  onDelete={callDeleteTask}
+                  task={ task }
+                  updateTaskStatus={ updateTaskStatus }
+                  onEdit={ () => { setSelectedEditingTask(task); setShowForm(true); } }
+                  onDelete={ callDeleteTask }
                 />
               </motion.div>
             ))}
@@ -180,15 +174,15 @@ function App() {
       <Snackbar
         open={feedback.open}
         autoHideDuration={3000}
-        onClose={() => setFeedback({ ...feedback, open: false })}
+        onClose={ () => setFeedback({ ...feedback, open: false }) }
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       >
         <Alert
-          onClose={() => setFeedback({ ...feedback, open: false })}
-          severity={feedback.severity}
+          onClose={ () => setFeedback({ ...feedback, open: false }) }
+          severity={ feedback.severity }
           variant="filled"
         >
-          {feedback.message}
+          { feedback.message }
         </Alert>
       </Snackbar>
     </>
